@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts } from '../redux/productSlice';
-import ProductCard from '../components/ProductCard';
-import Spinner from '../components/Spinner';
+import ProductCard from '../components/product/product-card';
+import Spinner from '../components/spinner/spinner';
 import toast from 'react-hot-toast';
 
 const LandingPage = () => {

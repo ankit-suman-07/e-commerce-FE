@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { selectProduct } from '../redux/productSlice';
+import { selectProduct } from '../../redux/productSlice';
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
