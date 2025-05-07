@@ -4,6 +4,8 @@ import { fetchProducts } from '../redux/productSlice';
 import ProductCard from '../components/product/product-card';
 import Spinner from '../components/spinner/spinner';
 import toast from 'react-hot-toast';
+import Hero from '../components/hero/hero';
+import './landing-page.css';
 
 const LandingPage = () => {
   const [search, setSearch] = useState('');
@@ -31,7 +33,8 @@ const LandingPage = () => {
   }, [error]);
 
   return (
-    <div >
+    <div className='landing-page' >
+      <Hero />
       <input
         type="text"
         value={search}
