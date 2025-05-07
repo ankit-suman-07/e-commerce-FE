@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { selectProduct } from '../redux/productSlice';
 
-export const ProductCard = ({ product }) => {
+const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -22,3 +22,5 @@ export const ProductCard = ({ product }) => {
     </div>
   );
 };
+
+export default ProductCard;
