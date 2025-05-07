@@ -3,3 +3,27 @@
     margin: 10px;
     min-height: 100dvh;
 }
+
+.filters {
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input {
+    border: 2px solid black;
+    margin-right: 50px;
+    margin-left: 10px;
+    padding: 5px;
+    width: 200px;
+}
+
+.category-select {
+    border: 2px solid black;
+    margin-left: 50px;
+    margin-right: 10px;
+    padding: 5px;
+    width: 200px;
+}

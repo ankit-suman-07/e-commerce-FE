@@ -35,6 +35,7 @@ const LandingPage = () => {
   return (
     <div className='landing-page' >
       <Hero />
+      <div className='filters' >
       <input
         type="text"
         value={search}
@@ -52,6 +53,7 @@ const LandingPage = () => {
           </option>
         ))}
         </select>
+        </div>
       {loading ? (
         <Spinner />
       ) : (
