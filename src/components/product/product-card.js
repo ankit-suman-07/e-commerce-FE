@@ -13,9 +13,9 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="border rounded p-4 shadow cursor-pointer" onClick={handleClick}>
+    <div onClick={handleClick}>
       <img src={product.imageUrl} alt={product.name}/>
-      <h3 className="text-lg font-semibold">{product.name}</h3>
+      <h3>{product.name}</h3>
       <p>Price: ${product.price}</p>
       <p>Brand: {product.brand}</p>
       <p>Category: {product.category}</p>

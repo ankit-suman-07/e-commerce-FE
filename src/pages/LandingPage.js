@@ -31,7 +31,7 @@ const LandingPage = () => {
   }, [error]);
 
   return (
-    <div className="p-4">
+    <div >
       <input
         type="text"
         value={search}
