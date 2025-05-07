@@ -7,11 +7,23 @@ import toast from 'react-hot-toast';
 
 const LandingPage = () => {
   const [search, setSearch] = useState('');
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(fetchProducts(search));
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/products/categories');
+        const data = await response.json();
+        setCategories(data);
+      } catch (err) {
+        toast.error('Failed to fetch categories');
+      }
+    };
+    fetchCategories();
   }, [search, dispatch]);
 
   useEffect(() => {
@@ -25,15 +37,28 @@ const LandingPage = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search products..."
-        className="w-full p-2 border mb-4"
+        className='search-input'
       />
+      <select
+        onChange={(e) => setSelectedCategory(e.target.value)}
+        className='category-select' >
+        <option value="">All Categories</option>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
+        </select>
       {loading ? (
         <Spinner />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
+        <div className='product-list'>
+          {products.filter((product) => 
+            selectedCategory === '' || product.category === selectedCategory
+        ).map((product) => (
+          <ProductCard key={product.id} product={product} />
+      ))}
+
         </div>
       )}
     </div>
