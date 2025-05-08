@@ -16,7 +16,8 @@
 }
 
 .search-input {
-    border: 2px solid black;
+    border: 2px solid #d8e6ed;
+    border-radius: 2px;
     margin-right: 50px;
     margin-left: 10px;
     padding: 5px;
@@ -24,7 +25,8 @@
 }
 
 .category-select {
-    border: 2px solid black;
+    border: 2px solid #d8e6ed;
+    border-radius: 2px;
     margin-left: 50px;
     margin-right: 10px;
     padding: 5px;
@@ -55,6 +57,16 @@
 @media (max-width: 700px) {
     .product-list {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .search-input {
+        margin:10px;
+        width: 150px;
+    }
+    
+    .category-select {
+        margin: 10px;
+        width: 150px;
     }
 }
 
