@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import ProductDetails from './pages/ProductDetails';
 import { Toaster } from 'react-hot-toast';
 import NavBar from './components/nav/nav-bar';
+import Footer from './components/footer/footer';
 
 const App = () => (
   <Router>
@@ -13,6 +14,7 @@ const App = () => (
       <Route path="/" element={<LandingPage />} />
       <Route path="/product/:id" element={<ProductDetails />} />
     </Routes>
+    <Footer />
   </Router>
 );
 
