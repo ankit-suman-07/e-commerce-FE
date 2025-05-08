@@ -8,10 +8,11 @@ const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleClick = () => {
+  const handleClick = async () => {
     dispatch(selectProduct(product));
     navigate(`/product/${product.id}`);
   };
+  
 
   return (
     <div onClick={handleClick} className='product-card' >
@@ -20,12 +21,6 @@ const ProductCard = ({ product }) => {
         <span className='product-info-title' >{product.name}</span>
         <span className='product-info-price' >${product.price}</span>
       </div>
-      {/* <p>Brand: {product.brand}</p>
-      <p>Category: {product.category}</p>
-      <p>Description: {product.description}</p> */}
-      {/* <div className='invisible-desc' >
-        {product.description}
-      </div> */}
     </div>
   );
 };

@@ -67,6 +67,14 @@
     transform: scale(0.95);
 }
 
+.product-loading {
+    height: calc(100dvh - 120px);
+    width: 100dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .product-details-inner {
     margin: 50px;

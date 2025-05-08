@@ -6,6 +6,7 @@ import Spinner from '../components/spinner/spinner';
 import toast from 'react-hot-toast';
 import Hero from '../components/hero/hero';
 import './landing-page.css';
+import NoProducts from '../components/no-products/no-products';
 
 const LandingPage = () => {
   const [search, setSearch] = useState('');
@@ -16,13 +17,20 @@ const LandingPage = () => {
 
   useEffect(() => {
     dispatch(fetchProducts(search));
+    
     const fetchCategories = async () => {
+      
+      
       try {
         const response = await fetch('http://localhost:8080/products/categories');
         const data = await response.json();
         setCategories(data);
+        toast.success('Categories fetched successfully!');
       } catch (err) {
         toast.error('Failed to fetch categories');
+      }
+      if(products){
+        toast.success('Products fetched successfully!');
       }
     };
     fetchCategories();
@@ -31,6 +39,13 @@ const LandingPage = () => {
   useEffect(() => {
     if (error) toast.error(error);
   }, [error]);
+
+  const filteredProducts = products.filter((product) =>
+    product &&
+    product.name.toLowerCase().includes(search.toLowerCase()) &&
+    (selectedCategory === '' || product.category === selectedCategory)
+  );
+
 
   return (
     <div className='landing-page' >
@@ -61,12 +76,13 @@ const LandingPage = () => {
         <Spinner />
       ) : (
         <div className='product-list'>
-          {products.filter((product) => 
-            selectedCategory === '' || product.category === selectedCategory
-        ).map((product) => (
-          <ProductCard key={product.id} product={product} />
-      ))}
-
+          {filteredProducts.length === 0 ? (
+            <NoProducts />
+          ) : (
+            filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          )}
         </div>
       )}
     </div>
