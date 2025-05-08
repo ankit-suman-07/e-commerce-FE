@@ -2,6 +2,9 @@
     border: 2px solid black;
     margin: 10px;
     min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .filters {
@@ -29,14 +32,22 @@
 }
 
 .product-list {
+    width: 70%;
     border: 2px solid black;
     margin-top: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 1080px) {
+    .product-list {
+        width: 90%;
+    }
 }
 
 @media (max-width: 900px) {
     .product-list {
+        width: 100%;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }

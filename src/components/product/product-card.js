@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div onClick={handleClick} className='product-card' >
-      <img src={product.imageUrl} alt={product.name}/>
+      <img src={product.imageUrl + "?random=" + product.id} alt={product.name}/>
       <div className='product-info'>
         <span className='product-info-title' >{product.name}</span>
         <span className='product-info-price' >${product.price}</span>
