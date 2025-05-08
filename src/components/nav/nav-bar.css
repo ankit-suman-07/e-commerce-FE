@@ -1,14 +1,15 @@
 .nav {
-    border: 2px solid black;
+    background-color: #4b5267;
     margin: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px;
+    height: 70px;
 }
 
 .logo {
     margin-left: 50px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,12 +23,106 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
+    font-weight: 600;
+    
+}
+
+.active, .not-active {
+    color: white;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.active {
+    border-bottom: 2px solid white;
+}
+
+.active:hover, .not-active:hover {
+    color: tomato;
 }
 
 .login-btn {
-    border: 2px solid black;
+    border: 2px solid white;
+    background-color: tomato;
+    letter-spacing: 0.5px;
+    color: white;
+    font-weight: 600;
     border-radius: 4px;
     margin-left: 50px;
     width: 80px;
     height: 30px;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: tomato;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.cart {
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .logo {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 720px) {
+
+    .nav {
+        height: 50px;
+    }
+
+    .logo {
+        margin-left: 10px;
+        font-size: 28px;
+    }
+    
+    .links {
+        margin-right: 10px;
+    }
+
+    .login-btn {
+        margin: 10px;
+        width: 60px;
+        height: 30px;
+    }
+
+    .cart {
+        width: 40px;
+        height: 40px;
+    }
 }

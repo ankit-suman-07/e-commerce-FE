@@ -9,8 +9,12 @@ const NavBar = () => {
             e-comm.
         </div>
         <div className='links' >
-            <NavLink to='/' className={({isActive}) => isActive ? 'active' : ''} >Home</NavLink>
+            <NavLink to='/' className={({isActive}) => isActive ? 'active' : 'not-active'} >Home</NavLink>
             <button className='login-btn' >Login</button>
+            <div className='cart' >
+              <img src='https://cdn-icons-png.flaticon.com/512/1170/1170678.png' alt='cart' className='cart-icon' />
+              <span className='cart-count' >0</span>
+            </div>
         </div>
     </div>
   )
