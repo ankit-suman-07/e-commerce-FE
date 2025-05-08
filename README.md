@@ -5,6 +5,7 @@
 ## How to run locally
 
 ### Backend needs to be set-up before Fronend as API calls will not work otherwise
+- Repository for backend code: [https://github.com/ankit-suman-07/e-commerce-BE](https://github.com/ankit-suman-07/e-commerce-BE)
 
 Step 1: Clone the repository
 ```
