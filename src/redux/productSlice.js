@@ -4,10 +4,16 @@ import axios from 'axios';
 export const fetchProducts = createAsyncThunk(
   'product/fetchProducts',
   async (searchTerm = '', thunkAPI) => {
+    
     try {
       const endpoint = searchTerm
         ? `http://localhost:8080/products?search=${encodeURIComponent(searchTerm)}`
         : 'http://localhost:8080/products';
+
+      // Delay to simulate network latency
+      // This is just for demonstration purposes.
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       const response = await axios.get(endpoint);
       return response.data;
     } catch (error) {

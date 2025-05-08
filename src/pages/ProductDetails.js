@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import './product-details.css'; // Assuming you have some CSS for styling
+import toast from 'react-hot-toast';
+import Spinner from '../components/spinner/spinner';
+import './product-details.css';
 
 const ProductDetails = () => {
   const product = useSelector((state) => state.product.selectedProduct);
   const navigate = useNavigate();
-
   const [image, setImage] = useState(product.imageUrl || '');
+  const [loading, setLoading] = useState(true);
+
+  // Simulation of network latency for loading state
+  // This is just for demonstration purposes.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); 
+    
+    if(!product) {
+      toast.error('No product selected!');
+      navigate('/');
+    } else {
+      toast.success('Product details loaded successfully!');
+    }
+    return () => clearTimeout(timer); 
+    
+  }, []);
+
+  
 
   if (!product) return <p>No product selected.</p>;
+  if (loading) return <div className="product-loading"><Spinner /></div>;
 
   return (
     <div className='product-page' >
