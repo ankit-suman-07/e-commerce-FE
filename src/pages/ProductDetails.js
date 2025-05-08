@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 import Spinner from '../components/spinner/spinner';
 import './product-details.css';
 
@@ -16,8 +17,15 @@ const ProductDetails = () => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1000); 
-
+    
+    if(!product) {
+      toast.error('No product selected!');
+      navigate('/');
+    } else {
+      toast.success('Product details loaded successfully!');
+    }
     return () => clearTimeout(timer); 
+    
   }, []);
 
   

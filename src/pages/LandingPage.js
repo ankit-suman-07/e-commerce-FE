@@ -25,6 +25,7 @@ const LandingPage = () => {
         const response = await fetch('http://localhost:8080/products/categories');
         const data = await response.json();
         setCategories(data);
+        toast.success('Categories fetched successfully!');
       } catch (err) {
         toast.error('Failed to fetch categories');
       }
