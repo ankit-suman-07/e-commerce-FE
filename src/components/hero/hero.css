@@ -1,3 +1,75 @@
 .hero {
-    border: 2px solid black;
+    width: 100%;
+    
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .slideshow-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 450px;}
+  
+  .slides-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+  }
+  
+  .slide-image {
+    min-width: 100%;
+    object-fit: cover;
+  }
+  
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.5rem;
+    border-radius: 50%;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .nav-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  @media (max-width: 900px) {
+    
+    .slideshow-container { 
+        height: 400px;
+    }
 }
+
+  @media (max-width: 800px) {
+    .nav-button {
+        top: 150px;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .slideshow-container { 
+        height: 300px;
+    }
+
+    .nav-button {
+        top: 100px;
+    }
+    
+}
+  

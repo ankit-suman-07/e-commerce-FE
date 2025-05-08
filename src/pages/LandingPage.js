@@ -34,7 +34,10 @@ const LandingPage = () => {
 
   return (
     <div className='landing-page' >
+      <div className='hero-section' >
       <Hero />
+      </div>
+      
       <div className='filters' >
       <input
         type="text"
