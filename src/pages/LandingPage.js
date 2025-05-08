@@ -29,6 +29,9 @@ const LandingPage = () => {
       } catch (err) {
         toast.error('Failed to fetch categories');
       }
+      if(products){
+        toast.success('Products fetched successfully!');
+      }
     };
     fetchCategories();
   }, [search, dispatch]);
