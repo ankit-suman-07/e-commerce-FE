@@ -17,7 +17,10 @@ const LandingPage = () => {
 
   useEffect(() => {
     dispatch(fetchProducts(search));
+    
     const fetchCategories = async () => {
+      
+      
       try {
         const response = await fetch('http://localhost:8080/products/categories');
         const data = await response.json();
