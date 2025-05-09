@@ -1,6 +1,14 @@
 # E-COMMERCE Frontend
 - An e-commerce web app made using ReactJS & Redux
 
+## Features:
+- ReactJS for frontend
+- Redux for centralized state management
+- Api fetch using axios
+- Toast notifications
+- Partial search and filter functionality
+- Loading spinner to indicate loading
+- Responsive for different screen sizes
 
 ## How to run locally
 
