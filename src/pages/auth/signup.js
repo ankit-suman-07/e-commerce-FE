@@ -26,7 +26,7 @@ const SignUp = () => {
                 <div className='auth-form-detail' >
                     <input type="password" id='password' placeholder='Re-enter password' />
                 </div>
-                <button className='auth-btn' >Login</button>
+                <button className='auth-btn' >SignUp</button>
             </div>
             <div className='auth-footer' >
                 <span className='new-existing' >Existing User? <button className='auth-page-change' >Login</button></span>
