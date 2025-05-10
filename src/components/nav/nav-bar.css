@@ -72,6 +72,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.cart:hover {
+    cursor: pointer;
+    transform: scale(0.9);
 }
 
 .cart img {
