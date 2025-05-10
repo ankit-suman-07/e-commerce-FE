@@ -22,7 +22,7 @@ const LogIn = () => {
             </div>
             <div className='auth-footer' >
                 <span className='new-existing' >New User? <button className='auth-page-change' >Sign Up</button></span>
-                <span>Or login with</span>
+                <span>Or SignIn with</span>
                 <div className='auth-social' >
                     <button className='auth-social-btn' >
                       <img src={Apple} alt="Apple" />
