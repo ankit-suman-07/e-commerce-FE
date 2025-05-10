@@ -1,11 +1,17 @@
 import React from 'react'
 import "./auth.css";
+import { useNavigate } from 'react-router-dom';
 
 import Google from "../../assets/google.png";
 import Apple from "../../assets/apple.png";
 import Github from "../../assets/github.png";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  const goToLoginPage = () => {
+    navigate('/login');
+  };
   return (
     <div className='auth-page' >
         <div className='auth-box' >
@@ -29,8 +35,8 @@ const SignUp = () => {
                 <button className='auth-btn' >SignUp</button>
             </div>
             <div className='auth-footer' >
-                <span className='new-existing' >Existing User? <button className='auth-page-change' >Login</button></span>
-                <span>Or SignIn with</span>
+                <span className='new-existing' >Existing User? <button className='auth-page-change' onClick={goToLoginPage} >Login</button></span>
+                <span className='auth-social-text' >Or SignIn with</span>
                 <div className='auth-social' >
                     <button className='auth-social-btn' >
                       <img src={Apple} alt="Apple" />
@@ -43,9 +49,7 @@ const SignUp = () => {
                     </button>
                 </div>
             </div>
-            <div className='auth-footer' >
-                
-            </div>
+            
         </div>
     </div>
   )
