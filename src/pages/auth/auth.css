@@ -1,0 +1,5 @@
+.auth-page {
+    border: 2px solid black;
+    min-height: calc(100dvh - 120px);
+    margin: 10px;
+}
