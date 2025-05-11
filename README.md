@@ -1,6 +1,8 @@
 # E-COMMERCE Frontend
 - An e-commerce web app made using ReactJS & Redux
 
+## Access the live app here : [https://e-commerce-fe-kappa.vercel.app/](https://e-commerce-fe-kappa.vercel.app/)
+
 ## Features:
 - ReactJS for frontend
 - Redux for centralized state management
