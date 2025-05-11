@@ -7,8 +7,8 @@ export const fetchProducts = createAsyncThunk(
     
     try {
       const endpoint = searchTerm
-        ? `http://localhost:8080/products?search=${encodeURIComponent(searchTerm)}`
-        : 'http://localhost:8080/products';
+        ? `https://e-commerce-backend-iwni.onrender.com/products?search=${encodeURIComponent(searchTerm)}`
+        : 'https://e-commerce-backend-iwni.onrender.com/products';
 
       // Delay to simulate network latency
       // This is just for demonstration purposes.

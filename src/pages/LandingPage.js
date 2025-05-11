@@ -22,7 +22,7 @@ const LandingPage = () => {
       
       
       try {
-        const response = await fetch('http://localhost:8080/products/categories');
+        const response = await fetch('https://e-commerce-backend-iwni.onrender.com/products/categories');
         const data = await response.json();
         setCategories(data);
         toast.success('Categories fetched successfully!');
