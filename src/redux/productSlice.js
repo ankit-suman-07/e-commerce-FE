@@ -12,7 +12,7 @@ export const fetchProducts = createAsyncThunk(
 
       // Delay to simulate network latency
       // This is just for demonstration purposes.
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      //await new Promise(resolve => setTimeout(resolve, 1000));
 
       const response = await axios.get(endpoint);
       return response.data;

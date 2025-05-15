@@ -14,9 +14,9 @@ const ProductDetails = () => {
   // Simulation of network latency for loading state
   // This is just for demonstration purposes.
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000); 
+    // const timer = setTimeout(() => {
+    //   setLoading(false);
+    // }, 1000); 
     
     if(!product) {
       toast.error('No product selected!');
@@ -24,7 +24,7 @@ const ProductDetails = () => {
     } else {
       toast.success('Product details loaded successfully!');
     }
-    return () => clearTimeout(timer); 
+    //return () => clearTimeout(timer); 
     
   }, []);
 
